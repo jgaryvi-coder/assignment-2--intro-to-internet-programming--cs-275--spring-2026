@@ -11,10 +11,11 @@ const { src, dest, series, watch } = require(`gulp`),
     reload = browserSync.reload;
 
 let browserChoice = `default`;
+
 let compressHTML = () => {
     return src(`*.html`)
         .pipe(htmlCompressor({collapseWhitespace: true}))
-        .pipe(dest(`compressed-html/`));
+        .pipe(dest(`prod`));
 };
 
 exports.compressHTML = compressHTML;
