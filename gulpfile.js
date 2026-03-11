@@ -6,7 +6,6 @@ const { src, dest, series, watch } = require(`gulp`),
     htmlValidator = require(`gulp-html`),
     jsCompressor = require(`gulp-uglify`),
     jsLinter = require(`gulp-eslint`),
-    sass = require(`gulp-sass`)(require(`sass`)),
     browserSync = require(`browser-sync`),
     reload = browserSync.reload;
 
