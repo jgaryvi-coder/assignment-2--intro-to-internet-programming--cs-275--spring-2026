@@ -22,4 +22,5 @@ let compressHTML = () => {
         .pipe(dest(`prod`));
 };
 
+exports.validateHTML = validateHTML;
 exports.compressHTML = compressHTML;
