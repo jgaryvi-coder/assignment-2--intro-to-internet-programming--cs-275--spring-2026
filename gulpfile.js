@@ -58,6 +58,33 @@ let copyUnprocessedAssetsForProd = () => {
         .pipe(dest(`prod`));
 };
 
+let serve = () => {
+    browserSync({
+        notify: true,
+        reloadDelay: 50,
+        browser: browserChoice,
+        server: {
+            baseDir: [
+                `temp`,
+                `./`
+            ]
+        }
+    });
+
+    watch(`js/*.js`, series(lintJS, transpileJSForDev)).on(`change`, reload);
+
+    watch(`styles/*.css`, lintCSS).on(`change`, reload);
+
+    watch(`./*.html`, validateHTML).on(`change`, reload);
+
+    watch(`img/**/*`).on(`change`, reload);
+};
+
+async function clean() {
+    const foldersToDelete = await deleteAsync([`./temp`, `prod`]);
+    console.log(`The following directories were deleted:`, foldersToDelete);
+}
+
 exports.validateHTML = validateHTML;
 exports.compressHTML = compressHTML;
 exports.lintJS = lintJS;
@@ -65,3 +92,19 @@ exports.transpileJSForDev = transpileJSForDev;
 exports.transpileJSForProd = transpileJSForProd;
 exports.lintCSS = lintCSS;
 exports.copyUnprocessedAssetsForProd = copyUnprocessedAssetsForProd;
+exports.clean = clean;
+exports.serve = series(
+    clean,
+    validateHTML,
+    lintCSS,
+    lintJS,
+    transpileJSForDev,
+    serve
+);
+exports.build = series(
+    clean,
+    compressHTML,
+    lintCSS,
+    transpileJSForProd,
+    copyUnprocessedAssetsForProd
+);
