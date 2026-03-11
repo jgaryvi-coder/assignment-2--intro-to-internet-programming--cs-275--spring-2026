@@ -47,7 +47,7 @@ let lintCSS = () => {
             failAfterError: false,
             reporters: [{formatter: `string`, console: true}]
         }))
-        .pipe(dest(`temp/styles`)); // Moves clean CSS to temp for the browser to use
+        .pipe(dest(`temp/styles`));
 };
 
 exports.validateHTML = validateHTML;
