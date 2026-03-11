@@ -50,9 +50,18 @@ let lintCSS = () => {
         .pipe(dest(`temp/styles`));
 };
 
+let copyUnprocessedAssetsForProd = () => {
+    return src([
+        `img/**`,
+        `json/**`,
+    ], { base: './' })
+        .pipe(dest(`prod`));
+};
+
 exports.validateHTML = validateHTML;
 exports.compressHTML = compressHTML;
 exports.lintJS = lintJS;
 exports.transpileJSForDev = transpileJSForDev;
 exports.transpileJSForProd = transpileJSForProd;
 exports.lintCSS = lintCSS;
+exports.copyUnprocessedAssetsForProd = copyUnprocessedAssetsForProd;
