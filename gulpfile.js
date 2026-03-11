@@ -11,8 +11,13 @@ const { src, dest, series, watch } = require(`gulp`),
 
 let browserChoice = `default`;
 
+let validateHTML = () => {
+    return src(`./*.html`)
+        .pipe(htmlValidator(undefined));
+};
+
 let compressHTML = () => {
-    return src(`*.html`)
+    return src(`./*.html`)
         .pipe(htmlCompressor({collapseWhitespace: true}))
         .pipe(dest(`prod`));
 };
