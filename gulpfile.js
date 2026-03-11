@@ -41,8 +41,18 @@ let transpileJSForProd = () => {
         .pipe(dest(`prod/js`));
 };
 
+let lintCSS = () => {
+    return src(`styles/*.css`)
+        .pipe(CSSLinter({
+            failAfterError: false,
+            reporters: [{formatter: `string`, console: true}]
+        }))
+        .pipe(dest(`temp/styles`)); // Moves clean CSS to temp for the browser to use
+};
+
 exports.validateHTML = validateHTML;
 exports.compressHTML = compressHTML;
 exports.lintJS = lintJS;
 exports.transpileJSForDev = transpileJSForDev;
 exports.transpileJSForProd = transpileJSForProd;
+exports.lintCSS = lintCSS;
