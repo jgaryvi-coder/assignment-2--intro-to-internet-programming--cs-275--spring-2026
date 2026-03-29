@@ -1,16 +1,16 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #333;
-    overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333;
+  overflow-x: hidden;
 }
 
 h1 {
-    font-size: 2rem;
-    line-height: 1.1875;
-    font-weight: 600;
-    text-align: center;
-    margin: 2rem 0;
+  font-size: 2rem;
+  line-height: 1.1875;
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem 0;
 }
