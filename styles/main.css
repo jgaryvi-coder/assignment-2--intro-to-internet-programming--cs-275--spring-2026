@@ -14,3 +14,52 @@ h1 {
   text-align: center;
   margin: 2rem 0;
 }
+
+.carousel {
+  width: 680px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform .4s ease-in-out;
+}
+
+.slide {
+  width: 640px;
+  padding: 0 20px;
+  flex-shrink: 0;
+}
+
+.slide h2 {
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: .25rem;
+}
+
+.slide h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+.credit {
+  text-align: center;
+  font-size: .8rem;
+  margin-top: .5rem;
+}
+
+.review {
+  margin-top: 1.5rem;
+}
+
+.source {
+  margin-top: 1rem;
+}
