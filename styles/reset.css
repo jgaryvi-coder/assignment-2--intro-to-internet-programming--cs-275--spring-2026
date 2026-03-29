@@ -74,7 +74,7 @@ video {
   padding: 0;
   border: 0;
   font: inherit;
-  vertical-align: baseline
+  vertical-align: baseline;
 }
 
 article,
@@ -87,32 +87,32 @@ header,
 menu,
 nav,
 section {
-  display: block
+  display: block;
 }
 
 body {
   line-height: 1;
-  font-family: sans-serif
+  font-family: sans-serif;
 }
 
 ol,
 ul {
-  list-style: none
+  list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none
+  quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: none;
 }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0
+  border-spacing: 0;
 }
