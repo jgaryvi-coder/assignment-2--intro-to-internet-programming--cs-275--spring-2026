@@ -63,3 +63,24 @@ h1 {
 .source {
   margin-top: 1rem;
 }
+
+.carousel-navigation {
+  position: absolute;
+  top: 40%;
+  left: 30px;
+  width: 620px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.carousel-navigation a {
+  pointer-events: auto;
+  opacity: .5;
+  transition: opacity .2s ease;
+}
+
+.carousel-navigation a:hover {
+  opacity: 1;
+}
