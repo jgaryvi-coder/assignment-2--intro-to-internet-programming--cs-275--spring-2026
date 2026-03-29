@@ -4,6 +4,21 @@ let totalSlides = 0;
 const updateSlide = () => {
     const track = document.querySelector(`.carousel-slides`);
     track.style.transform = `translateX(-${currentIndex * 680}px)`;
+
+    const prevBtn = document.querySelectorAll(`.carousel-navigation a`)[0];
+    const nextBtn = document.querySelectorAll(`.carousel-navigation a`)[1];
+
+    if (currentIndex === 0) {
+        prevBtn.style.visibility = `hidden`;
+    } else {
+        prevBtn.style.visibility = `visible`;
+    }
+
+    if (currentIndex === totalSlides - 1) {
+        nextBtn.style.visibility = `hidden`;
+    } else {
+        nextBtn.style.visibility = `visible`;
+    }
 };
 
 const goNext = () => {
@@ -43,6 +58,7 @@ const initCarousel = (count) => {
             goPrev();
         }
     });
+    updateSlide();
 };
 
 const jsonpCallback = (data) => {
