@@ -54,6 +54,7 @@ let copyUnprocessedAssetsForProd = () => {
     return src([
         `img/**`,
         `json/**`,
+        `styles/**`
     ], { base: './' })
         .pipe(dest(`prod`));
 };
@@ -104,7 +105,6 @@ exports.serve = series(
 exports.build = series(
     clean,
     compressHTML,
-    lintCSS,
     transpileJSForProd,
     copyUnprocessedAssetsForProd
 );
